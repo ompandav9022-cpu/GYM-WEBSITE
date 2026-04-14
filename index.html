@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitZone Gym</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+<!-- Navbar -->
+<header class="bg-black shadow-lg">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-2xl font-bold text-green-400">💪 FitZone BY OM </h1>
+    <nav class="space-x-6">
+      <a href="#" class="hover:text-green-400">Home</a>
+      <a href="#programs" class="hover:text-green-400">Programs</a>
+      <a href="#trainer" class="hover:text-green-400">Trainers</a>
+      <a href="#contact" class="hover:text-green-400">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="text-center py-20 bg-gradient-to-r from-black to-gray-800">
+  <h2 class="text-4xl font-bold mb-4">Transform Your Body</h2>
+  <p class="mb-6">Join the best gym in your city</p>
+  <button onclick="joinNow()" class="bg-green-500 px-6 py-3 rounded-xl hover:bg-green-600">Join Now</button>
+  <p id="joinMsg" class="mt-4"></p>
+</section>
+
+<!-- Programs -->
+<section id="programs" class="py-16 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold text-center mb-10">Our Programs</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-bold mb-2">🏋️ Weight Training</h3>
+      <p>Build muscle with expert guidance.</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-bold mb-2">🔥 Fat Loss</h3>
+      <p>Burn calories with intense workouts.</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-bold mb-2">🤸 Cardio</h3>
+      <p>Improve stamina and heart health.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BMI Calculator -->
+<section class="bg-gray-800 py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">BMI Calculator</h2>
+  <input id="weight" type="number" placeholder="Weight (kg)" class="p-2 m-2 text-black" />
+  <input id="height" type="number" placeholder="Height (cm)" class="p-2 m-2 text-black" />
+  <br />
+  <button onclick="calculateBMI()" class="bg-green-500 px-4 py-2 rounded">Calculate</button>
+  <p id="bmiResult" class="mt-4"></p>
+</section>
+
+<!-- Trainers -->
+<section id="trainer" class="py-16 max-w-6xl mx-auto text-center">
+  <h2 class="text-3xl font-bold mb-10">Our Trainers</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-gray-800 p-6 rounded-2xl">OM PANDAV - Strength Coach</div>
+    <div class="bg-gray-800 p-6 rounded-2xl">NIKHIL PANDAV - Yoga Expert</div>
+    <div class="bg-gray-800 p-6 rounded-2xl">AKSHAY PANDAV - Cardio Trainer</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-black py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+  <input type="text" placeholder="Your Name" class="p-2 m-2 text-black" />
+  <input type="email" placeholder="Your Email" class="p-2 m-2 text-black" />
+  <br />
+  <textarea placeholder="Message" class="p-2 m-2 text-black"></textarea>
+  <br />
+  <button onclick="sendMsg()" class="bg-green-500 px-4 py-2 rounded">Send</button>
+  <p id="contactMsg" class="mt-4"></p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-center p-4">
+  <p>© 2026 FitZone Gym</p>
+</footer>
+
+<script>
+  function joinNow() {
+    document.getElementById('joinMsg').innerText = 'Welcome! Our team will contact you soon 💪';
+  }
+
+  function calculateBMI() {
+    let w = document.getElementById('weight').value;
+    let h = document.getElementById('height').value / 100;
+    let bmi = (w / (h * h)).toFixed(2);
+    document.getElementById('bmiResult').innerText = 'Your BMI: ' + bmi;
+  }
+
+  function sendMsg() {
+    document.getElementById('contactMsg').innerText = 'Message sent successfully ✅';
+  }
+</script>
+
+</body>
+</html>
